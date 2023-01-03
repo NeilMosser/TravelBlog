@@ -4,7 +4,8 @@ import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData } from '../lib/posts';
 import Link from 'next/link';
 import Date from '../components/date';
-import NavBar from '../components/NavBar.js';
+import Image from 'next/image';
+
 
 export async function getStaticProps() {
   const allPostsData = getSortedPostsData();
@@ -18,10 +19,15 @@ export async function getStaticProps() {
 export default function Home({allPostsData}) {
   return (
     <Layout home>
-      <NavBar />
       <Head>
         <title>{siteTitle}</title>
       </Head>
+      {/* <Image 
+        src='/../public/images/homebanner.jpg'
+        alt="Mountains"
+        width={1500}
+        height={1000}
+        /> */}
       <section className={utilStyles.headingMd}>
         <p>[Your Self Introduction]</p>
         <p>
@@ -34,7 +40,7 @@ export default function Home({allPostsData}) {
         <ul className={utilStyles.list}>
           {allPostsData.map(({ id, date, title }) => (
             <li className={utilStyles.listItem} key={id}>
-            <Link href={`/posts/${id}`}>{title}</Link>
+            <Link href={`/posts/${id}`} legacyBehavior>{title}</Link>
             <br />
             <small className={utilStyles.lightText}>
               <Date dateString={date} />
@@ -43,6 +49,8 @@ export default function Home({allPostsData}) {
           ))}
         </ul>
       </section>
+      
     </Layout>
+   
   );
 }

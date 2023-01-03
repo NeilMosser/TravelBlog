@@ -4,6 +4,8 @@ import React, { useState } from "react";
 // import Logo from "./Logo";
 import NavItem from "./NavItem";
 
+
+
 const MENU_ITEMS = [
   {text: "Home", href: "/"},
   {text: "About", href: "/"},
@@ -18,9 +20,9 @@ const NavBar = () => {
     <header>
       <nav className={`nav`}>
         <Link href={"/"}>
-          <a>
-            <h1 className="logo">Neil'sTravelBlog</h1>
-          </a>
+
+          <h1 className="logo">Neil'sTravelBlog</h1>
+
         </Link>
         <div onClick={()=>setActive(!active)} className={`nav__menu-bar`}>
           <div></div>
@@ -40,7 +42,7 @@ const NavBar = () => {
         </div>
       </nav>
     </header>
-  )
+  );
 };
 
 export default NavBar;

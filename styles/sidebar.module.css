@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.about {
+  font-size: 30px;
+}
+
+.been{
+  color: red;
+}
+
+.image {
+  border-radius: 50%;
+}
+
+.socials {
+  
+}
+
