@@ -3,14 +3,18 @@ import Image from 'next/image';
 import styles from './layout.module.css';
 import utilStyles from '../styles/utils.module.css';
 import Link from 'next/link';
+import NavBar from './NavBar';
+import SideBar from './SideBar';
 
 const name = 'Neil';
-export const siteTitle = 'Next.js Sample Website';
+export const siteTitle = "Neil's Travel Blog";
 
 export default function Layout({ children, home }) {
   return (
     <div className={styles.container}>
-      <Head>
+      <NavBar />
+      <SideBar />
+      {/* <Head>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
@@ -24,8 +28,8 @@ export default function Layout({ children, home }) {
         />
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-      <header className={styles.header}>
+      </Head> */}
+      {/* <header className={styles.header}>
         {home ? (
           <>
             <Image
@@ -40,7 +44,7 @@ export default function Layout({ children, home }) {
           </>
         ) : (
           <>
-            <Link href="/">
+            <Link href="/" legacyBehavior>
               <Image
                 priority
                 src="/images/profile.jpg"
@@ -51,13 +55,13 @@ export default function Layout({ children, home }) {
               />
             </Link>
             <h2 className={utilStyles.headingLg}>
-              <Link href="/" className={utilStyles.colorInherit}>
+              <Link href="/" className={utilStyles.colorInherit} legacyBehavior>
                 {name}
               </Link>
             </h2>
           </>
         )}
-      </header>
+      </header> */}
       <main>{children}</main>
       {!home && (
         <div className={styles.backToHome}>
